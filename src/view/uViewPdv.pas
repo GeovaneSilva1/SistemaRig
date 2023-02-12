@@ -119,8 +119,6 @@ begin
 end;
 
 procedure TfrViewPdv.FormCreate(Sender: TObject);
-var
-  wTeste: String;
 begin
   pmontarbotoes;
 end;
