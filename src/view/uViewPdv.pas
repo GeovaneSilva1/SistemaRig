@@ -121,8 +121,6 @@ end;
 procedure TfrViewPdv.FormCreate(Sender: TObject);
 var
   wTeste: String;
-  wTeste3: Integer;
-  wTeste4: Integer;
 begin
   pmontarbotoes;
 end;
