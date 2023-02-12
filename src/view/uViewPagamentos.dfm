@@ -1,0 +1,77 @@
+object frViewPagamentos: TfrViewPagamentos
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'frViewPagamentos'
+  ClientHeight = 656
+  ClientWidth = 856
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnContainer: TPanel
+    Left = 0
+    Top = 0
+    Width = 856
+    Height = 656
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 0
+    ExplicitLeft = 336
+    ExplicitTop = 312
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object pnFormasPagamento: TPanel
+      Left = 273
+      Top = 0
+      Width = 583
+      Height = 656
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 0
+      ExplicitLeft = 336
+      ExplicitTop = 312
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+    end
+    object pnInformacoes: TPanel
+      Left = 0
+      Top = 0
+      Width = 273
+      Height = 656
+      Align = alLeft
+      BevelOuter = bvNone
+      Color = 5589317
+      Padding.Left = 20
+      Padding.Top = 35
+      Padding.Right = 20
+      Padding.Bottom = 50
+      ParentBackground = False
+      TabOrder = 1
+      object Panel1: TPanel
+        Left = 20
+        Top = 35
+        Width = 233
+        Height = 41
+        Align = alTop
+        BevelOuter = bvNone
+        Caption = 'Resumo da venda'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -27
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        ExplicitLeft = 48
+        ExplicitTop = 312
+        ExplicitWidth = 185
+      end
+    end
+  end
+end
