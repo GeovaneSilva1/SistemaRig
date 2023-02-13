@@ -103,6 +103,8 @@ type
     Shape22: TShape;
     Panel10: TPanel;
     Shape23: TShape;
+    svPagamentos: TSplitView;
+    pnPag: TPanel;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -125,7 +127,7 @@ implementation
 
 {$R *.dfm}
 
-uses dmControl;
+uses dmControl, uViewPagamentos;
 
 
 
@@ -148,6 +150,8 @@ end;
 
 procedure TfrViewPdv.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
+  var
+    wPagamentos: TfrViewPagamentos;
 begin
   case Key of
     VK_escape: ShowMessage('Cancelar Operação');
@@ -156,7 +160,13 @@ begin
     VK_F6:  ShowMessage('Cancelar Venda');
     VK_F5:  ShowMessage('Cancelar Item');
     VK_F12: btMaisFuncoesClick(Sender);
-    VK_F7:  ShowMessage('Fechar Venda');
+    VK_F7:  begin
+              wPagamentos := TfrViewPagamentos.Create(nil);
+              wPagamentos.Parent := pnPag;
+              wPagamentos.Show;
+              pAcaoSplitView(svPagamentos);
+            end;
+
   end;
 end;
 
@@ -165,6 +175,7 @@ begin
   Flogin := TfrPageLogin.Create(nil);
   Flogin.Parent := pnMaster;
   Flogin.Show;
+
 end;
 
 procedure TfrViewPdv.pAcaoSplitView(prValue: TSplitView);

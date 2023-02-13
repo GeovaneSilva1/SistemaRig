@@ -10093,7 +10093,6 @@ object frViewPdv: TfrViewPdv
                 Title.Font.Height = -13
                 Title.Font.Name = 'Tahoma'
                 Title.Font.Style = []
-                Width = 43
                 Visible = True
               end
               item
@@ -10183,10 +10182,6 @@ object frViewPdv: TfrViewPdv
           Color = 14342621
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 8
-          ExplicitTop = 192
-          ExplicitWidth = 185
-          ExplicitHeight = 41
           object Panel2: TPanel
             Left = 0
             Top = 205
@@ -10202,9 +10197,6 @@ object frViewPdv: TfrViewPdv
             Font.Style = []
             ParentFont = False
             TabOrder = 0
-            ExplicitLeft = 8
-            ExplicitTop = 192
-            ExplicitWidth = 185
             object Shape18: TShape
               Left = 0
               Top = 40
@@ -10230,8 +10222,6 @@ object frViewPdv: TfrViewPdv
             Font.Style = []
             ParentFont = False
             TabOrder = 1
-            ExplicitTop = 8
-            ExplicitWidth = 200
             object Shape19: TShape
               Left = 0
               Top = 40
@@ -10257,8 +10247,6 @@ object frViewPdv: TfrViewPdv
             Font.Style = []
             ParentFont = False
             TabOrder = 2
-            ExplicitTop = 8
-            ExplicitWidth = 200
             object Shape20: TShape
               Left = 0
               Top = 40
@@ -10284,8 +10272,6 @@ object frViewPdv: TfrViewPdv
             Font.Style = []
             ParentFont = False
             TabOrder = 3
-            ExplicitTop = 8
-            ExplicitWidth = 200
             object Shape21: TShape
               Left = 0
               Top = 40
@@ -10311,8 +10297,6 @@ object frViewPdv: TfrViewPdv
             Font.Style = []
             ParentFont = False
             TabOrder = 4
-            ExplicitTop = 8
-            ExplicitWidth = 200
             object Shape22: TShape
               Left = 0
               Top = 40
@@ -10338,9 +10322,6 @@ object frViewPdv: TfrViewPdv
             Font.Style = []
             ParentFont = False
             TabOrder = 5
-            ExplicitLeft = 8
-            ExplicitTop = 192
-            ExplicitWidth = 185
             object Shape23: TShape
               Left = 0
               Top = 40
@@ -10351,6 +10332,28 @@ object frViewPdv: TfrViewPdv
               ExplicitWidth = 200
             end
           end
+        end
+      end
+      object svPagamentos: TSplitView
+        Left = 1113
+        Top = 60
+        Width = 0
+        Height = 617
+        AnimationDelay = 0
+        DisplayMode = svmOverlay
+        Opened = False
+        OpenedWidth = 840
+        Placement = svpRight
+        TabOrder = 5
+        UseAnimation = False
+        object pnPag: TPanel
+          Left = 0
+          Top = 0
+          Width = 0
+          Height = 617
+          Align = alClient
+          BevelOuter = bvNone
+          TabOrder = 0
         end
       end
     end
