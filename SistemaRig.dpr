@@ -5,7 +5,8 @@ uses
   uViewPdv in 'src\view\uViewPdv.pas' {frViewPdv},
   uViewLogin in 'src\view\uViewLogin.pas' {frPageLogin},
   dmControl in 'src\model\dmControl.pas' {frdmControl: TDataModule},
-  uViewPagamentos in 'src\view\uViewPagamentos.pas' {frViewPagamentos};
+  uViewPagamentos in 'src\view\uViewPagamentos.pas' {frViewPagamentos},
+  uViewPagePix in 'src\view\uViewPagePix.pas' {framePix: TFrame};
 
 {$R *.res}
 
