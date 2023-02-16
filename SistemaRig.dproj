@@ -112,6 +112,15 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="src\view\uViewPagamentos.pas">
+            <Form>frViewPagamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\uViewPagePix.pas">
+            <Form>framePix</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

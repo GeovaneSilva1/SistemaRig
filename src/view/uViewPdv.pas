@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Imaging.pngimage, uViewLogin;
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Imaging.pngimage, uViewLogin,
+  Vcl.WinXCtrls;
 
 type
   TfrViewPdv = class(TForm)
@@ -88,12 +89,31 @@ type
     Image1: TImage;
     pnMaster: TPanel;
     dsItems: TDataSource;
+    svFuncoes: TSplitView;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Shape18: TShape;
+    Panel3: TPanel;
+    Shape19: TShape;
+    Panel4: TPanel;
+    Shape20: TShape;
+    Panel5: TPanel;
+    Shape21: TShape;
+    Panel6: TPanel;
+    Shape22: TShape;
+    Panel10: TPanel;
+    Shape23: TShape;
+    svPagamentos: TSplitView;
+    pnPag: TPanel;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure btMaisFuncoesClick(Sender: TObject);
   private
     FLogin: TfrPageLogin;
     procedure pmontarbotoes;
+    procedure pAcaoSplitView(prValue: TSplitView);
     { Private declarations }
   public
     { Public declarations }
@@ -107,11 +127,16 @@ implementation
 
 {$R *.dfm}
 
-uses dmControl;
+uses dmControl, uViewPagamentos;
 
 
 
 { TfrViewPdv }
+
+procedure TfrViewPdv.btMaisFuncoesClick(Sender: TObject);
+begin
+  pAcaoSplitView(svFuncoes);
+end;
 
 procedure TfrViewPdv.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -123,11 +148,39 @@ begin
   pmontarbotoes;
 end;
 
+procedure TfrViewPdv.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+  var
+    wPagamentos: TfrViewPagamentos;
+begin
+  case Key of
+    VK_escape: ShowMessage('Cancelar Operação');
+    VK_F4:  ShowMessage('Consultar Preço');
+    VK_F2:  ShowMessage('Abrir Caixa');
+    VK_F6:  ShowMessage('Cancelar Venda');
+    VK_F5:  ShowMessage('Cancelar Item');
+    VK_F12: btMaisFuncoesClick(Sender);
+    VK_F7:  begin
+              wPagamentos := TfrViewPagamentos.Create(nil);
+              wPagamentos.Parent := pnPag;
+              wPagamentos.Show;
+              pAcaoSplitView(svPagamentos);
+            end;
+
+  end;
+end;
+
 procedure TfrViewPdv.FormShow(Sender: TObject);
 begin
   Flogin := TfrPageLogin.Create(nil);
   Flogin.Parent := pnMaster;
   Flogin.Show;
+
+end;
+
+procedure TfrViewPdv.pAcaoSplitView(prValue: TSplitView);
+begin
+  prValue.Opened := not prValue.Opened;
 end;
 
 procedure TfrViewPdv.pmontarbotoes;
