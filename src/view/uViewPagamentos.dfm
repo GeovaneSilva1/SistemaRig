@@ -12,7 +12,6 @@ object frViewPagamentos: TfrViewPagamentos
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnContainer: TPanel
@@ -115,7 +114,7 @@ object frViewPagamentos: TfrViewPagamentos
           ParentFont = False
           TabOrder = 0
         end
-        object Panel18: TPanel
+        object pnEscolhaPagamento: TPanel
           Left = 30
           Top = 46
           Width = 507
@@ -124,7 +123,7 @@ object frViewPagamentos: TfrViewPagamentos
           BevelOuter = bvNone
           Padding.Top = 10
           TabOrder = 1
-          object Panel19: TPanel
+          object pnCartao: TPanel
             AlignWithMargins = True
             Left = 0
             Top = 10
@@ -137,12 +136,13 @@ object frViewPagamentos: TfrViewPagamentos
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 0
-            object Shape3: TShape
+            object sShapeCartao: TShape
               Left = 0
               Top = 0
               Width = 150
               Height = 80
               Align = alClient
+              Pen.Color = 1357025
               Pen.Style = psClear
               Shape = stRoundRect
               ExplicitLeft = 40
@@ -166,6 +166,8 @@ object frViewPagamentos: TfrViewPagamentos
                 Align = alTop
                 BevelOuter = bvNone
                 TabOrder = 0
+                OnClick = Panel21Click
+                ExplicitTop = -4
                 object Image2: TImage
                   AlignWithMargins = True
                   Left = 50
@@ -324,6 +326,7 @@ object frViewPagamentos: TfrViewPagamentos
                     AB53A346AD5AD5A9DE9C554A903F437158B14874521D101D24C4906A74013920
                     4A36131F00161D800000A0A93FD3FF00FFD9}
                   Stretch = True
+                  OnClick = Image2Click
                   ExplicitLeft = 24
                   ExplicitTop = -24
                   ExplicitWidth = 105
@@ -345,10 +348,11 @@ object frViewPagamentos: TfrViewPagamentos
                 Font.Style = []
                 ParentFont = False
                 TabOrder = 1
+                OnClick = Panel22Click
               end
             end
           end
-          object Panel23: TPanel
+          object pnPix: TPanel
             AlignWithMargins = True
             Left = 178
             Top = 10
@@ -361,12 +365,13 @@ object frViewPagamentos: TfrViewPagamentos
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 1
-            object Shape4: TShape
+            object sShapePix: TShape
               Left = 0
               Top = 0
               Width = 150
               Height = 80
               Align = alClient
+              Pen.Color = 1357025
               Pen.Style = psClear
               Shape = stRoundRect
               ExplicitLeft = 40
@@ -390,6 +395,9 @@ object frViewPagamentos: TfrViewPagamentos
                 Align = alTop
                 BevelOuter = bvNone
                 TabOrder = 0
+                OnClick = Panel25Click
+                ExplicitLeft = 3
+                ExplicitTop = -4
                 object Image3: TImage
                   AlignWithMargins = True
                   Left = 50
@@ -752,10 +760,8 @@ object frViewPagamentos: TfrViewPagamentos
                     894600008E128D00001CF5FF015DCA05B8CFAD36000000000049454E44AE4260
                     82}
                   Stretch = True
-                  ExplicitLeft = 24
-                  ExplicitTop = -24
-                  ExplicitWidth = 105
-                  ExplicitHeight = 105
+                  OnClick = Image3Click
+                  ExplicitTop = 2
                 end
               end
               object Panel26: TPanel
@@ -773,10 +779,13 @@ object frViewPagamentos: TfrViewPagamentos
                 Font.Style = []
                 ParentFont = False
                 TabOrder = 1
+                OnClick = Panel26Click
+                ExplicitLeft = 3
+                ExplicitTop = 52
               end
             end
           end
-          object Panel27: TPanel
+          object pnDinheiro: TPanel
             AlignWithMargins = True
             Left = 356
             Top = 10
@@ -789,12 +798,13 @@ object frViewPagamentos: TfrViewPagamentos
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 2
-            object Shape5: TShape
+            object sShapeDinheiro: TShape
               Left = 0
               Top = 0
               Width = 150
               Height = 80
               Align = alClient
+              Pen.Color = 1357025
               Pen.Style = psClear
               Shape = stRoundRect
               ExplicitLeft = 40
@@ -818,6 +828,9 @@ object frViewPagamentos: TfrViewPagamentos
                 Align = alTop
                 BevelOuter = bvNone
                 TabOrder = 0
+                OnClick = Panel29Click
+                ExplicitLeft = 3
+                ExplicitTop = -4
                 object Image4: TImage
                   AlignWithMargins = True
                   Left = 50
@@ -1103,6 +1116,7 @@ object frViewPagamentos: TfrViewPagamentos
                     58002D580085610174C10268C102280C0BA00B16408B4C20C0FF0148D88E5BF2
                     7038950000000049454E44AE426082}
                   Stretch = True
+                  OnClick = Image4Click
                   ExplicitLeft = 24
                   ExplicitTop = -24
                   ExplicitWidth = 105
@@ -1124,6 +1138,9 @@ object frViewPagamentos: TfrViewPagamentos
                 Font.Style = []
                 ParentFont = False
                 TabOrder = 1
+                OnClick = Panel30Click
+                ExplicitLeft = 3
+                ExplicitTop = 52
               end
             end
           end

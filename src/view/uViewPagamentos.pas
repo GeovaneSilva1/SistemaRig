@@ -48,21 +48,21 @@ type
     Panel15: TPanel;
     Panel16: TPanel;
     Panel17: TPanel;
-    Panel18: TPanel;
-    Panel19: TPanel;
-    Shape3: TShape;
+    pnEscolhaPagamento: TPanel;
+    pnCartao: TPanel;
+    sShapeCartao: TShape;
     Panel20: TPanel;
     Panel21: TPanel;
     Panel22: TPanel;
     Image2: TImage;
-    Panel23: TPanel;
-    Shape4: TShape;
+    pnPix: TPanel;
+    sShapePix: TShape;
     Panel24: TPanel;
     Panel25: TPanel;
     Image3: TImage;
     Panel26: TPanel;
-    Panel27: TPanel;
-    Shape5: TShape;
+    pnDinheiro: TPanel;
+    sShapeDinheiro: TShape;
     Panel28: TPanel;
     Panel29: TPanel;
     Image4: TImage;
@@ -70,9 +70,20 @@ type
     pnContainerPag: TPanel;
     Panel32: TPanel;
     Shape6: TShape;
-    procedure FormShow(Sender: TObject);
+    procedure Panel25Click(Sender: TObject);
+    procedure Panel21Click(Sender: TObject);
+    procedure Panel29Click(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure Panel22Click(Sender: TObject);
+    procedure Image3Click(Sender: TObject);
+    procedure Panel26Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
+    procedure Panel30Click(Sender: TObject);
   private
-    { Private declarations }
+    procedure pSetClick(prShape: TShape; prPanel: TPanel);
+    procedure pChamaFramePix;
+    procedure pChameFrameDinheiro;
+    procedure pChameFrameCartao;
   public
     { Public declarations }
   end;
@@ -84,16 +95,87 @@ implementation
 
 {$R *.dfm}
 
-uses uViewPagePix;
+uses uViewPagePix, uViewDinheiro, uViewCartao;
 
-procedure TfrViewPagamentos.FormShow(Sender: TObject);
-var
-  wFrame: TframePix;
+procedure TfrViewPagamentos.Image2Click(Sender: TObject);
 begin
-  wFrame := TframePix.Create(nil);
-  wFrame.Align := alClient;
-  wFrame.Parent := pnContainerPag;
+  pChameFrameCartao;
+  pSetClick(sShapeCartao, pnEscolhaPagamento);
+end;
 
+procedure TfrViewPagamentos.Image3Click(Sender: TObject);
+begin
+  pChamaFramePix;
+  pSetClick(sShapePix,pnEscolhaPagamento);
+end;
+
+procedure TfrViewPagamentos.Image4Click(Sender: TObject);
+begin
+   pChameFrameDinheiro;
+   pSetClick(sShapeDinheiro,pnEscolhaPagamento);
+end;
+
+procedure TfrViewPagamentos.Panel21Click(Sender: TObject);
+begin
+  pChameFrameCartao;
+  pSetClick(sShapeCartao, pnEscolhaPagamento);
+end;
+
+procedure TfrViewPagamentos.Panel22Click(Sender: TObject);
+begin
+  pChameFrameCartao;
+  pSetClick(sShapeCartao, pnEscolhaPagamento);
+end;
+
+procedure TfrViewPagamentos.Panel25Click(Sender: TObject);
+begin
+  pChamaFramePix;
+  pSetClick(sShapePix,pnEscolhaPagamento);
+end;
+
+procedure TfrViewPagamentos.Panel26Click(Sender: TObject);
+begin
+  pChamaFramePix;
+  pSetClick(sShapePix,pnEscolhaPagamento);
+end;
+
+procedure TfrViewPagamentos.Panel29Click(Sender: TObject);
+begin
+  pChameFrameDinheiro;
+  pSetClick(sShapeDinheiro,pnEscolhaPagamento);
+end;
+
+procedure TfrViewPagamentos.Panel30Click(Sender: TObject);
+begin
+   pChameFrameDinheiro;
+   pSetClick(sShapeDinheiro,pnEscolhaPagamento);
+end;
+
+procedure TfrViewPagamentos.pChamaFramePix;
+begin
+  TfFramePix.New(nil).fAlinhamento(alClient).fEmbed(pnContainerPag);
+end;
+
+procedure TfrViewPagamentos.pChameFrameCartao;
+begin
+  TfFrameCartao.New(nil).fAlinhamento(alClient).fEmbed(pnContainerPag);
+end;
+
+procedure TfrViewPagamentos.pChameFrameDinheiro;
+begin
+  TfFrameDinheiro.New(nil).fAlinhamento(alClient).fEmbed(pnContainerPag);
+end;
+
+procedure TfrViewPagamentos.pSetClick(prShape: TShape; prPanel: TPanel);
+begin
+  sShapeCartao.Pen.Style   := psClear;
+  sShapePix.Pen.Style      := psClear;
+  sShapeDinheiro.Pen.Style := psClear;
+
+  prShape.Pen.Style := psSolid;
+
+  prPanel.Visible := False;
+  prPanel.Visible := True;
 end;
 
 end.

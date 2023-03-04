@@ -1,4 +1,4 @@
-object framePix: TframePix
+object fFramePix: TfFramePix
   Left = 0
   Top = 0
   Width = 391
@@ -16,10 +16,6 @@ object framePix: TframePix
     Padding.Right = 80
     Padding.Bottom = 20
     TabOrder = 0
-    ExplicitLeft = 136
-    ExplicitTop = 144
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Image1: TImage
       Left = 80
       Top = 20

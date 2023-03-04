@@ -1,0 +1,72 @@
+object fFrameDinheiro: TfFrameDinheiro
+  Left = 0
+  Top = 0
+  Width = 507
+  Height = 381
+  Align = alClient
+  TabOrder = 0
+  object pnContainerReceb: TPanel
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 501
+    Height = 375
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 0
+    ExplicitLeft = 160
+    ExplicitTop = 168
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object pnRecebido: TPanel
+      Left = 24
+      Top = 111
+      Width = 449
+      Height = 50
+      Margins.Left = 41
+      Margins.Top = 300
+      Margins.Right = 41
+      Margins.Bottom = 30
+      BevelOuter = bvNone
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 0
+        Top = 0
+        Width = 214
+        Height = 50
+        Align = alLeft
+        Caption = 'Total Recebido'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 6707288
+        Font.Height = -33
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        ExplicitLeft = -6
+        ExplicitTop = 8
+        ExplicitHeight = 74
+      end
+      object edRecebido: TEdit
+        Left = 214
+        Top = 0
+        Width = 235
+        Height = 50
+        Align = alClient
+        Alignment = taRightJustify
+        BorderStyle = bsNone
+        Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = 6707288
+        Font.Height = -33
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        Text = '0.00'
+        ExplicitLeft = 220
+        ExplicitWidth = 205
+        ExplicitHeight = 145
+      end
+    end
+  end
+end

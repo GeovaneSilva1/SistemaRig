@@ -105,6 +105,8 @@ type
     Shape23: TShape;
     svPagamentos: TSplitView;
     pnPag: TPanel;
+    Panel11: TPanel;
+    Shape24: TShape;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -127,7 +129,7 @@ implementation
 
 {$R *.dfm}
 
-uses dmControl, uViewPagamentos;
+uses dmControl, uViewPagamentos, uViewIdentCliente;
 
 
 
@@ -166,8 +168,14 @@ begin
               wPagamentos.Show;
               pAcaoSplitView(svPagamentos);
             end;
+    VK_CONTROL : begin
+                   TfrPageIndetCliente.New(nil).fEmbed(pnMaster).Show;
+                 end;
+    VK_F9 : begin
+             TfrPageIndetCliente.New(nil).fIdentificarCpf.fEmbed(pnMaster).Show;
+            end;
+    end;
 
-  end;
 end;
 
 procedure TfrViewPdv.FormShow(Sender: TObject);
