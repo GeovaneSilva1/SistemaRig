@@ -8,17 +8,38 @@ uses
   Vcl.ExtCtrls;
 
 type
-  TframePix = class(TFrame)
+  TfFramePix = class(TFrame)
     Panel1: TPanel;
     Image1: TImage;
   private
     { Private declarations }
   public
-    { Public declarations }
+    class Function New(AOwner: TComponent): TfFramePix;
+    function fAlinhamento(prValue: TAlign): TfFramePix;
+    function fEmbed(prValue: TWinControl): TfFramePix;
   end;
 
 implementation
 
 {$R *.dfm}
+
+{ TframePix }
+
+function TfFramePix.fAlinhamento(prValue: TAlign): TfFramePix;
+begin
+  Result := Self;
+  Self.Align := prValue;
+end;
+
+function TfFramePix.fEmbed(prValue: TWinControl): TfFramePix;
+begin
+  Result := Self;
+  Self.Parent := prValue;
+end;
+
+class function TfFramePix.New(AOwner: TComponent): TfFramePix;
+begin
+  Result := Self.Create(Aowner);
+end;
 
 end.

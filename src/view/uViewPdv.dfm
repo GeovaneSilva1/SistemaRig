@@ -10161,7 +10161,7 @@ object frViewPdv: TfrViewPdv
         end
       end
       object svFuncoes: TSplitView
-        Left = 5
+        Left = 2
         Top = 60
         Width = 0
         Height = 423
@@ -10182,6 +10182,8 @@ object frViewPdv: TfrViewPdv
           Color = 14342621
           ParentBackground = False
           TabOrder = 0
+          ExplicitTop = 6
+          ExplicitWidth = 252
           object Panel2: TPanel
             Left = 0
             Top = 205
@@ -10297,6 +10299,8 @@ object frViewPdv: TfrViewPdv
             Font.Style = []
             ParentFont = False
             TabOrder = 4
+            ExplicitTop = -6
+            ExplicitWidth = 252
             object Shape22: TShape
               Left = 0
               Top = 40
@@ -10323,6 +10327,33 @@ object frViewPdv: TfrViewPdv
             ParentFont = False
             TabOrder = 5
             object Shape23: TShape
+              Left = 0
+              Top = 40
+              Width = 0
+              Height = 1
+              Align = alBottom
+              ExplicitTop = -24
+              ExplicitWidth = 200
+            end
+          end
+          object Panel11: TPanel
+            Left = 0
+            Top = 246
+            Width = 0
+            Height = 41
+            Align = alTop
+            BevelOuter = bvNone
+            Caption = 'Informar Cliente(Ctrl)'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 6
+            ExplicitTop = 8
+            ExplicitWidth = 252
+            object Shape24: TShape
               Left = 0
               Top = 40
               Width = 0
